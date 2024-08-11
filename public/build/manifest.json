@@ -4,7 +4,7 @@
     "src": "Modules/Dashboard/Resources/assets/fonts/boxicons.eot"
   },
   "Modules/Dashboard/Resources/assets/fonts/boxicons.svg": {
-    "file": "assets/boxicons-C-VAoYqY.svg",
+    "file": "assets/boxicons-yNZ6hzku.svg",
     "src": "Modules/Dashboard/Resources/assets/fonts/boxicons.svg"
   },
   "Modules/Dashboard/Resources/assets/fonts/boxicons.ttf": {
@@ -24,7 +24,7 @@
     "src": "Modules/Dashboard/Resources/assets/fonts/dripicons-v2.eot"
   },
   "Modules/Dashboard/Resources/assets/fonts/dripicons-v2.svg": {
-    "file": "assets/dripicons-v2-CZ5Acx_z.svg",
+    "file": "assets/dripicons-v2-DLwXtOXU.svg",
     "src": "Modules/Dashboard/Resources/assets/fonts/dripicons-v2.svg"
   },
   "Modules/Dashboard/Resources/assets/fonts/dripicons-v2.ttf": {
@@ -40,7 +40,7 @@
     "src": "Modules/Dashboard/Resources/assets/fonts/fa-brands-400.eot"
   },
   "Modules/Dashboard/Resources/assets/fonts/fa-brands-400.svg": {
-    "file": "assets/fa-brands-400-Bk36hYKa.svg",
+    "file": "assets/fa-brands-400-Bd6RoRAo.svg",
     "src": "Modules/Dashboard/Resources/assets/fonts/fa-brands-400.svg"
   },
   "Modules/Dashboard/Resources/assets/fonts/fa-brands-400.ttf": {
@@ -60,7 +60,7 @@
     "src": "Modules/Dashboard/Resources/assets/fonts/fa-regular-400.eot"
   },
   "Modules/Dashboard/Resources/assets/fonts/fa-regular-400.svg": {
-    "file": "assets/fa-regular-400-BgstGd_n.svg",
+    "file": "assets/fa-regular-400-wG5vjdjk.svg",
     "src": "Modules/Dashboard/Resources/assets/fonts/fa-regular-400.svg"
   },
   "Modules/Dashboard/Resources/assets/fonts/fa-regular-400.ttf": {
@@ -80,7 +80,7 @@
     "src": "Modules/Dashboard/Resources/assets/fonts/fa-solid-900.eot"
   },
   "Modules/Dashboard/Resources/assets/fonts/fa-solid-900.svg": {
-    "file": "assets/fa-solid-900-KXyBKpuc.svg",
+    "file": "assets/fa-solid-900-gfs_q9xv.svg",
     "src": "Modules/Dashboard/Resources/assets/fonts/fa-solid-900.svg"
   },
   "Modules/Dashboard/Resources/assets/fonts/fa-solid-900.ttf": {
@@ -124,7 +124,7 @@
     "src": "node_modules/summernote/dist/font/summernote.woff"
   },
   "Modules/Dashboard/Resources/assets/js/qovex/qovex.js": {
-    "file": "assets/qovex-DZ_HlxCP.js",
+    "file": "assets/qovex-BpCrZ5-N.js",
     "src": "Modules/Dashboard/Resources/assets/js/qovex/qovex.js",
     "isEntry": true,
     "dynamicImports": [
@@ -136,7 +136,7 @@
     ]
   },
   "Modules/Dashboard/Resources/assets/scss/qovex/qovex.scss": {
-    "file": "assets/qovex-BfZEW8ak.css",
+    "file": "assets/qovex-B8E2tLAJ.css",
     "src": "Modules/Dashboard/Resources/assets/scss/qovex/qovex.scss",
     "isEntry": true
   },

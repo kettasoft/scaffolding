@@ -3,8 +3,7 @@
 return [
     'plural' => 'Accounts',
     'types' => [
-        \Modules\Accounts\Entities\User::ADMIN_TYPE => 'Admin',
-        \Modules\Accounts\Entities\User::PARENT_TYPE => 'Customer',
+        \Modules\Accounts\Entities\User::ADMIN_TYPE => 'Admin'
     ],
     'messages' => [
         'block' => 'This account is blocked,please check with your administration',

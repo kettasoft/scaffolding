@@ -937,8 +937,7 @@ export default {
         "users": {
             "plural": "العضويات",
             "types": {
-                "admin": "مسئول",
-                "parent": "عميل"
+                "admin": "مسئول"
             },
             "messages": {
                 "block": "تم حظر هذا الحساب برجاء المراجعه مع الادارة",
@@ -2009,8 +2008,7 @@ export default {
         "users": {
             "plural": "Accounts",
             "types": {
-                "admin": "Admin",
-                "parent": "Customer"
+                "admin": "Admin"
             },
             "messages": {
                 "block": "This account is blocked,please check with your administration",
