@@ -54,13 +54,6 @@ class User extends Authenticatable implements HasMedia, HasLocalePreference, Lar
     public const ADMIN_TYPE = 'admin';
 
     /**
-     * The code of customer type.
-     *
-     * @var string
-     */
-    public const PARENT_TYPE = 'parent';
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -98,8 +91,7 @@ class User extends Authenticatable implements HasMedia, HasLocalePreference, Lar
      * @var array
      */
     protected array $childTypes = [
-        self::ADMIN_TYPE    => Admin::class,
-        self::PARENT_TYPE   => ParentModel::class,
+        self::ADMIN_TYPE => Admin::class
     ];
 
     /**

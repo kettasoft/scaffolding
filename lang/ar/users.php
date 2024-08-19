@@ -3,8 +3,7 @@
 return [
     'plural' => 'العضويات',
     'types' => [
-        \Modules\Accounts\Entities\User::ADMIN_TYPE => 'مسئول',
-        \Modules\Accounts\Entities\User::PARENT_TYPE => 'عميل',
+        \Modules\Accounts\Entities\User::ADMIN_TYPE => 'مسئول'
     ],
     'messages' => [
         'block' => 'تم حظر هذا الحساب برجاء المراجعه مع الادارة',

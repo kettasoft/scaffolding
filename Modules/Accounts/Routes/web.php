@@ -20,14 +20,10 @@ Route::middleware('dashboard')
                 ->group(
                     function () {
                         Route::resource('admins', 'Dashboard\AdminController');
-                        Route::resource('parents', 'Dashboard\ParentController');
 
                         // block routes
                         Route::patch('admins/{admin}/block', 'Dashboard\AdminController@block')->name('admins.block');
                         Route::patch('admins/{admin}/unblock', 'Dashboard\AdminController@unblock')->name('admins.unblock');
-
-                        Route::patch('parents/{customer}/block', 'Dashboard\ParentController@block')->name('parents.block');
-                        Route::patch('parents/{customer}/unblock', 'Dashboard\ParentController@unblock')->name('parents.unblock');
                     }
                 );
         }

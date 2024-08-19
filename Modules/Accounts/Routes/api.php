@@ -11,7 +11,6 @@
 |
 */
 Route::get('/select/providers', 'SelectController@providers')->name('providers.select');
-Route::get('/select/parents', 'SelectController@index')->name('parent.select');
 
 Route::post('/register', 'Api\RegisterController@register')->name('user.register');
 Route::post('/login', 'Api\LoginController@login')->name('user.login');
