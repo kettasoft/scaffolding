@@ -25,41 +25,41 @@ return [
     |
     */
 
-    'stubs'    => [
-        'enabled'      => false,
-        'path'         => base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'),
-        'files'        => [
-            'routes/web'      => 'Routes/web.php',
-            'routes/api'      => 'Routes/api.php',
-            'views/index'     => 'Resources/views/index.blade.php',
-            'views/master'    => 'Resources/views/layouts/master.blade.php',
+    'stubs' => [
+        'enabled' => false,
+        'path' => base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'),
+        'files' => [
+            'routes/web' => 'Routes/web.php',
+            'routes/api' => 'Routes/api.php',
+            'views/index' => 'Resources/views/index.blade.php',
+            'views/master' => 'Resources/views/layouts/master.blade.php',
             'scaffold/config' => 'Config/config.php',
-            'composer'        => 'composer.json',
-            'assets/js/app'   => 'Resources/assets/js/app.js',
+            'composer' => 'composer.json',
+            'assets/js/app' => 'Resources/assets/js/app.js',
             'assets/sass/app' => 'Resources/assets/sass/app.scss',
             //            'webpack' => 'webpack.mix.js',
-            'package'         => 'package.json',
+            'package' => 'package.json',
         ],
         'replacements' => [
-            'routes/web'      => [
+            'routes/web' => [
                 'LOWER_NAME',
                 'STUDLY_NAME'
             ],
-            'routes/api'      => ['LOWER_NAME'],
-            'webpack'         => ['LOWER_NAME'],
-            'json'            => [
+            'routes/api' => ['LOWER_NAME'],
+            'webpack' => ['LOWER_NAME'],
+            'json' => [
                 'LOWER_NAME',
                 'STUDLY_NAME',
                 'MODULE_NAMESPACE',
                 'PROVIDER_NAMESPACE'
             ],
-            'views/index'     => ['LOWER_NAME'],
-            'views/master'    => [
+            'views/index' => ['LOWER_NAME'],
+            'views/master' => [
                 'LOWER_NAME',
                 'STUDLY_NAME'
             ],
             'scaffold/config' => ['STUDLY_NAME'],
-            'composer'        => [
+            'composer' => [
                 'LOWER_NAME',
                 'STUDLY_NAME',
                 'VENDOR',
@@ -69,9 +69,9 @@ return [
                 'PROVIDER_NAMESPACE',
             ],
         ],
-        'gitkeep'      => false,
+        'gitkeep' => false,
     ],
-    'paths'    => [
+    'paths' => [
         /*
         |--------------------------------------------------------------------------
         | Modules path
@@ -112,112 +112,112 @@ return [
         | Set the generate key to false to not generate that folder
         */
         'generator' => [
-            'config'          => [
-                'path'     => 'Config',
+            'config' => [
+                'path' => 'Config',
                 'generate' => true
             ],
-            'command'         => [
-                'path'     => 'Console',
+            'command' => [
+                'path' => 'Console',
                 'generate' => true
             ],
-            'migration'       => [
-                'path'     => 'Database/Migrations',
+            'migration' => [
+                'path' => 'Database/Migrations',
                 'generate' => true
             ],
-            'seeder'          => [
-                'path'     => 'Database/Seeders',
+            'seeder' => [
+                'path' => 'Database/Seeders',
                 'generate' => true
             ],
-            'factory'         => [
-                'path'     => 'Database/factories',
+            'factory' => [
+                'path' => 'Database/factories',
                 'generate' => true
             ],
-            'model'           => [
-                'path'     => 'Entities',
+            'model' => [
+                'path' => 'Entities',
                 'generate' => true
             ],
-            'routes'          => [
-                'path'     => 'Routes',
+            'routes' => [
+                'path' => 'Routes',
                 'generate' => true
             ],
-            'controller'      => [
-                'path'     => 'Http/Controllers',
+            'controller' => [
+                'path' => 'Http/Controllers',
                 'generate' => true
             ],
-            'filter'          => [
-                'path'     => 'Http/Middleware',
+            'filter' => [
+                'path' => 'Http/Middleware',
                 'generate' => true
             ],
-            'request'         => [
-                'path'     => 'Http/Requests',
+            'request' => [
+                'path' => 'Http/Requests',
                 'generate' => true
             ],
-            'provider'        => [
-                'path'     => 'Providers',
+            'provider' => [
+                'path' => 'Providers',
                 'generate' => true
             ],
-            'assets'          => [
-                'path'     => 'Resources/assets',
+            'assets' => [
+                'path' => 'Resources/assets',
                 'generate' => true
             ],
-            'lang'            => [
-                'path'     => 'Resources/lang',
+            'lang' => [
+                'path' => 'Resources/lang',
                 'generate' => true
             ],
-            'views'           => [
-                'path'     => 'Resources/views',
+            'views' => [
+                'path' => 'Resources/views',
                 'generate' => true
             ],
-            'test'            => [
-                'path'     => 'Tests/Unit',
+            'test' => [
+                'path' => 'Tests/Unit',
                 'generate' => true
             ],
-            'test-feature'    => [
-                'path'     => 'Tests/Feature',
+            'test-feature' => [
+                'path' => 'Tests/Feature',
                 'generate' => true
             ],
-            'repository'      => [
-                'path'     => 'Repositories',
+            'repository' => [
+                'path' => 'Repositories',
                 'generate' => false
             ],
-            'event'           => [
-                'path'     => 'Events',
+            'event' => [
+                'path' => 'Events',
                 'generate' => false
             ],
-            'listener'        => [
-                'path'     => 'Listeners',
+            'listener' => [
+                'path' => 'Listeners',
                 'generate' => false
             ],
-            'policies'        => [
-                'path'     => 'Policies',
+            'policies' => [
+                'path' => 'Policies',
                 'generate' => false
             ],
-            'rules'           => [
-                'path'     => 'Rules',
+            'rules' => [
+                'path' => 'Rules',
                 'generate' => false
             ],
-            'jobs'            => [
-                'path'     => 'Jobs',
+            'jobs' => [
+                'path' => 'Jobs',
                 'generate' => false
             ],
-            'emails'          => [
-                'path'     => 'Emails',
+            'emails' => [
+                'path' => 'Emails',
                 'generate' => false
             ],
-            'notifications'   => [
-                'path'     => 'Notifications',
+            'notifications' => [
+                'path' => 'Notifications',
                 'generate' => false
             ],
-            'resource'        => [
-                'path'     => 'Transformers',
+            'resource' => [
+                'path' => 'Transformers',
                 'generate' => false
             ],
-            'component-view'  => [
-                'path'     => 'Resources/views/components',
+            'component-view' => [
+                'path' => 'Resources/views/components',
                 'generate' => false
             ],
             'component-class' => [
-                'path'     => 'View/Components',
+                'path' => 'View/Components',
                 'generate' => false
             ],
         ],
@@ -292,7 +292,7 @@ return [
 
     'scan' => [
         'enabled' => false,
-        'paths'   => [
+        'paths' => [
             base_path('vendor/*/*'),
         ],
     ],
@@ -305,11 +305,11 @@ return [
     |
     */
 
-    'composer'   => [
-        'vendor'          => 'ibrahimelmonier',
-        'author'          => [
-            'name'  => 'Ibrahim El-Monier',
-            'email' => 'elmonieribrahim@gmail.com',
+    'composer' => [
+        'vendor' => 'kettasoft',
+        'author' => [
+            'name' => 'Abdalrhman Emad Saad',
+            'email' => 'kettasoft@gmail.com',
         ],
         'composer-output' => false,
     ],
@@ -322,10 +322,10 @@ return [
     | Here is the config for setting up caching feature.
     |
     */
-    'cache'      => [
-        'enabled'  => false,
-        'driver'   => 'file',
-        'key'      => 'laravel-modules',
+    'cache' => [
+        'enabled' => false,
+        'driver' => 'file',
+        'key' => 'laravel-modules',
         'lifetime' => 60,
     ],
     /*
@@ -335,7 +335,7 @@ return [
     | in your own Service Provider class.
     |--------------------------------------------------------------------------
     */
-    'register'   => [
+    'register' => [
         'translations' => true,
         /**
          * load files on boot or register method
@@ -344,7 +344,7 @@ return [
          *
          * @example boot|register
          */
-        'files'        => 'register',
+        'files' => 'register',
     ],
 
     /*
@@ -358,9 +358,9 @@ return [
     */
     'activators' => [
         'file' => [
-            'class'          => FileActivator::class,
-            'statuses-file'  => base_path('modules_statuses.json'),
-            'cache-key'      => 'activator.installed',
+            'class' => FileActivator::class,
+            'statuses-file' => base_path('modules_statuses.json'),
+            'cache-key' => 'activator.installed',
             'cache-lifetime' => 604800,
         ],
     ],

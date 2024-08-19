@@ -1,10 +1,10 @@
 {
-    "name": "ibrahimelmonier/installer",
+    "name": "kettasoft/installer",
     "description": "",
     "authors": [
         {
-            "name": "Ibrahim El-Monier",
-            "email": "elmonieribrahim@gmail.com"
+            "name": "Abdalrhman Emad Saad",
+            "email": "kettasoft@gmail.com"
         }
     ],
     "extra": {

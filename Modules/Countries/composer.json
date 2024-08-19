@@ -1,11 +1,11 @@
 {
-    "name": "ibrahimelmonier/countries",
+    "name": "kettasoft/countries",
     "type": "laravel-module",
     "description": "",
     "authors": [
         {
-            "name": "Ibrahim El-Monier",
-            "email": "elmonieribrahim@gmail.com"
+            "name": "Abdalrhman Emad Saad",
+            "email": "kettasoft@gmail.com"
         }
     ],
     "extra": {

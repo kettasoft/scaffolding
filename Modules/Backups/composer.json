@@ -1,11 +1,11 @@
 {
-    "name": "ibrahimelmonier/backups",
+    "name": "kettasoft/backups",
     "type": "laravel-module",
     "description": "",
     "authors": [
         {
-            "name": "Ibrahim El-Monier",
-            "email": "elmonieribrahim@gmail.com"
+            "name": "Abdalrhman Emad Saad",
+            "email": "kettasoft@gmail.com"
         }
     ],
     "extra": {
