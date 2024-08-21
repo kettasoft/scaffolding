@@ -1,0 +1,33 @@
+// Import Custom SB Admin 2 Variables (Overrides Default Bootstrap Variables)
+@import "variables.scss";
+
+// Import Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Import fontawesome
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+// Import Custom SB Admin 2 Mixins and Components
+@import "mixins.scss";
+@import "global.scss";
+@import "utilities.scss";
+
+// Custom Components
+@import "dropdowns.scss";
+@import "navs.scss";
+@import "buttons.scss";
+@import "cards.scss";
+@import "charts.scss";
+@import "login.scss";
+@import "error.scss";
+@import "footer.scss";
+
+@import "custom/editor";
+@import "custom/avatar";
+
+@import "../qovex/icons";
+@import "select2";
+@import "../editor";
+@import "../formValidation";
+@import "~toastr/toastr";
+@import "~parsleyjs/src/parsley.css";

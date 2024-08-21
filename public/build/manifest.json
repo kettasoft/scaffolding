@@ -123,10 +123,21 @@
     "file": "assets/summernote-DEekNz6a.woff",
     "src": "node_modules/summernote/dist/font/summernote.woff"
   },
+  "Modules/Dashboard/Resources/assets/js/dason/dason.js": {
+    "file": "assets/dason-DBEpPiy7.js",
+    "src": "Modules/Dashboard/Resources/assets/js/dason/dason.js",
+    "isEntry": true,
+    "imports": [
+      "_file-uploader.esm-IujA_HDQ.js"
+    ]
+  },
   "Modules/Dashboard/Resources/assets/js/qovex/qovex.js": {
-    "file": "assets/qovex-yEZWY8vd.js",
+    "file": "assets/qovex-BeV_8tCU.js",
     "src": "Modules/Dashboard/Resources/assets/js/qovex/qovex.js",
     "isEntry": true,
+    "imports": [
+      "_file-uploader.esm-IujA_HDQ.js"
+    ],
     "dynamicImports": [
       "node_modules/bootstrap-select/js/i18n/defaults-ar_AR.js",
       "node_modules/bootstrap-select/js/i18n/defaults-en_US.js"
@@ -135,10 +146,18 @@
       "assets/qovex-JsVWeiUi.css"
     ]
   },
+  "Modules/Dashboard/Resources/assets/scss/dason/dason.scss": {
+    "file": "assets/dason-BIyifQZF.css",
+    "src": "Modules/Dashboard/Resources/assets/scss/dason/dason.scss",
+    "isEntry": true
+  },
   "Modules/Dashboard/Resources/assets/scss/qovex/qovex.scss": {
-    "file": "assets/qovex-B8E2tLAJ.css",
+    "file": "assets/qovex-Br8t1uxz.css",
     "src": "Modules/Dashboard/Resources/assets/scss/qovex/qovex.scss",
     "isEntry": true
+  },
+  "_file-uploader.esm-IujA_HDQ.js": {
+    "file": "assets/file-uploader.esm-IujA_HDQ.js"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.eot": {
     "file": "assets/fa-brands-400-DnkPfk3o.eot",

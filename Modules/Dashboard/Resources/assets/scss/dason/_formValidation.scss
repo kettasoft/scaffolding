@@ -1,0 +1,12 @@
+li > a.validation_errors::after,
+li > a.validation_errors:hover::after,
+li > a.validation_errors:focus::after {
+    color: #fff;
+    content: "\f0205";
+    font-family: "Material Design Icons"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    display: inline-flex;
+    background: $danger;
+}

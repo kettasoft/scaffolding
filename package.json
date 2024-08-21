@@ -32,11 +32,13 @@
     },
     "dependencies": {
         "@curiosityx/bootstrap-session-timeout": "^1.0.0",
+        "@flaticon/flaticon-uicons": "^3.3.0",
         "@fortawesome/fontawesome-free": "^5.15.1",
         "@simonwep/pickr": "^1.8.2",
         "admin-resources": "git+https://github.com/themesbrand/admin-resources#master",
         "bootstrap-colorpicker": "^3.4.0",
         "bootstrap-select": "^1.13.18",
+        "bootstrap-select5": "npm:bootstrap-select@1.14.0-beta3",
         "bootstrap4": "npm:bootstrap@4.4.1",
         "bootstrap5": "npm:bootstrap@5.3.0",
         "chance": "^1.1.3",

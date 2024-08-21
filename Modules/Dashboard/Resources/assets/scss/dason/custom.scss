@@ -1,0 +1,106 @@
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.form-row > .col {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.img-size-32 {
+    width: 32px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.index-flag {
+    position: relative;
+    top: 10px;
+    left: 15px;
+}
+
+.accordion-item-custom {
+    background-color: #fff !important;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.badge {
+    padding: 6px 10px 6px 10px;
+    font-size: 14px;
+}
+
+.topnav {
+    z-index: 1000;
+    .nav-item {
+        a {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            border-color: transparent;
+
+            i {
+                font-size: 19px !important;
+            }
+        }
+        &.active > a {
+            border-bottom: 3px solid;
+            background: #24B1A31C;
+            color: var(--bs-primary) !important;
+        }
+        a:hover {
+            border-bottom: 3px solid;
+                background: #24B1A31C;
+                color: var(--bs-primary) !important;
+        }
+    }
+}
+
+.product-has-descount,
+.product-has-overprice,
+.product-status-available,
+.product-status-not-available {
+    padding: 4px;
+    line-height: 10px;
+}
+
+.product-has-overprice {
+    background: rgba(239, 103, 103, 0.18);
+    color: #ef6767;
+}
+
+.product-has-descount {
+    background: rgba(52, 195, 143, 0.18);
+    color: #34c38f;
+}
+
+.product-status-available {
+    background: #1c84ee;
+}
+.product-status-not-available {
+    background: #74788d;
+}
+
+.define-discount {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
