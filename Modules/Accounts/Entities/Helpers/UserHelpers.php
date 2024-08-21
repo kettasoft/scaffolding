@@ -2,6 +2,7 @@
 
 namespace Modules\Accounts\Entities\Helpers;
 
+use Avatar;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Validation\ValidationException;
@@ -212,5 +213,14 @@ trait UserHelpers
         if ($test_mode != 1 || !$test_mode) {
             event(new VerificationCreated($verification));
         }
+    }
+
+    /**
+     * Get user avatar
+     * @return string
+     */
+    public function avatar(): string
+    {
+        return Avatar::create($this->name)->toSvg();
     }
 }

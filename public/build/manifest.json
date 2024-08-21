@@ -117,11 +117,11 @@
   },
   "Modules/Dashboard/Resources/assets/fonts/summernote.ttf": {
     "file": "assets/summernote-4XkBPIRA.ttf",
-    "src": "node_modules/summernote/dist/font/summernote.ttf"
+    "src": "Modules/Dashboard/Resources/assets/fonts/summernote.ttf"
   },
   "Modules/Dashboard/Resources/assets/fonts/summernote.woff": {
     "file": "assets/summernote-DEekNz6a.woff",
-    "src": "node_modules/summernote/dist/font/summernote.woff"
+    "src": "Modules/Dashboard/Resources/assets/fonts/summernote.woff"
   },
   "Modules/Dashboard/Resources/assets/js/dason/dason.js": {
     "file": "assets/dason-DBEpPiy7.js",
@@ -132,7 +132,7 @@
     ]
   },
   "Modules/Dashboard/Resources/assets/js/qovex/qovex.js": {
-    "file": "assets/qovex-BeV_8tCU.js",
+    "file": "assets/qovex-C2BnLnLY.js",
     "src": "Modules/Dashboard/Resources/assets/js/qovex/qovex.js",
     "isEntry": true,
     "imports": [
@@ -152,7 +152,7 @@
     "isEntry": true
   },
   "Modules/Dashboard/Resources/assets/scss/qovex/qovex.scss": {
-    "file": "assets/qovex-Br8t1uxz.css",
+    "file": "assets/qovex-B8E2tLAJ.css",
     "src": "Modules/Dashboard/Resources/assets/scss/qovex/qovex.scss",
     "isEntry": true
   },
@@ -235,11 +235,11 @@
   },
   "node_modules/summernote/dist/font/summernote.ttf": {
     "file": "assets/summernote-4XkBPIRA.ttf",
-    "src": "node_modules/summernote/dist/font/summernote.ttf"
+    "src": "Modules/Dashboard/Resources/assets/fonts/summernote.ttf"
   },
   "node_modules/summernote/dist/font/summernote.woff": {
     "file": "assets/summernote-DEekNz6a.woff",
-    "src": "node_modules/summernote/dist/font/summernote.woff"
+    "src": "Modules/Dashboard/Resources/assets/fonts/summernote.woff"
   },
   "node_modules/summernote/dist/font/summernote.woff2": {
     "file": "assets/summernote-PMqM9czq.woff2",
