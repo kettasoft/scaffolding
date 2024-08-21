@@ -2,27 +2,29 @@
 
 namespace Modules\Accounts\Entities;
 
-use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
+use Parental\HasChildren;
 use App\Http\Filters\Filterable;
-use Illuminate\Contracts\Translation\HasLocalePreference;
+use Laravel\Sanctum\HasApiTokens;
+use Spatie\MediaLibrary\HasMedia;
+use Cog\Laravel\Ban\Traits\Bannable;
+use Laratrust\Contracts\LaratrustUser;
+use Illuminate\Notifications\Notifiable;
+use Laracasts\Presenter\PresentableTrait;
+use Lab404\Impersonate\Models\Impersonate;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Laratrust\Traits\HasRolesAndPermissions;
+use Modules\Chats\Entities\Concerns\HasChats;
+use Modules\Accounts\Entities\Helpers\UserHelpers;
+use Cog\Contracts\Ban\Bannable as BannableContract;
+use Modules\Accounts\Transformers\CustomerResource;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Lab404\Impersonate\Models\Impersonate;
-use Laracasts\Presenter\PresentableTrait;
-use Laratrust\Contracts\LaratrustUser;
-use Laratrust\Traits\HasRolesAndPermissions;
-use Laravel\Sanctum\HasApiTokens;
-use Modules\Accounts\Entities\Helpers\UserHelpers;
 use Modules\Accounts\Entities\Presenters\UserPresenter;
+use Illuminate\Contracts\Translation\HasLocalePreference;
 use Modules\Accounts\Notifications\EmailVerificationNotification;
-use Modules\Accounts\Transformers\CustomerResource;
-use Modules\Chats\Entities\Concerns\HasChats;
-use Parental\HasChildren;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
+use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
 
-class User extends Authenticatable implements HasMedia, HasLocalePreference, LaratrustUser
+class User extends Authenticatable implements HasMedia, HasLocalePreference, LaratrustUser, BannableContract
 {
     use Notifiable,
         UserHelpers,
@@ -34,7 +36,8 @@ class User extends Authenticatable implements HasMedia, HasLocalePreference, Lar
         Filterable,
         HasRolesAndPermissions,
         HasFactory,
-        Impersonate;
+        Impersonate,
+        Bannable;
 
     /**
      * Get the user's preferred locale.
