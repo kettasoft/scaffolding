@@ -131,6 +131,8 @@ return [
 
     'force_https' => env('APP_FORCE_HTTPS', false),
 
+    'force_json_response' => env('APP_FORCE_JSON_RESPONSE', false),
+
     'deploy_secret' => env('APP_DEPLOY_SECRET'),
 
     /*
