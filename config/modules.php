@@ -180,6 +180,10 @@ return [
                 'path' => 'Repositories',
                 'generate' => false
             ],
+            'transfers' => [
+                'path' => 'Transfers',
+                'generate' => false
+            ],
             'event' => [
                 'path' => 'Events',
                 'generate' => false

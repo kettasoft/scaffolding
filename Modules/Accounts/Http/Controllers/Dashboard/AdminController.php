@@ -3,16 +3,17 @@
 namespace Modules\Accounts\Http\Controllers\Dashboard;
 
 use Exception;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
+use Illuminate\Contracts\View\View;
 use Modules\Accounts\Entities\Admin;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 use Modules\Accounts\Http\Requests\AdminRequest;
 use Modules\Accounts\Repositories\AdminRepository;
+use Modules\Accounts\Transfers\CreateAdminTransfer;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class AdminController extends Controller
 {
@@ -71,7 +72,9 @@ class AdminController extends Controller
      */
     public function store(AdminRequest $request)
     {
-        $admin = $this->repository->create($request->allWithHashedPassword());
+        $transfer = CreateAdminTransfer::apply($request)->toArray();
+
+        $admin = $this->repository->create($transfer);
 
         flash(trans('accounts::admins.messages.created'))->success();
 

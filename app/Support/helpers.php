@@ -1,5 +1,6 @@
 <?php
 
+use App\Abstracts\DataTransferObjects;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 
@@ -304,4 +305,18 @@ if (!function_exists('layout')) {
     }
 }
 
+if (!function_exists('transfer')) {
+    /**
+     * Retrieve the instance from DataTransferObjects
+     * @param App\Abstracts\DataTransferObjects|string $object
+     * @return App\Abstracts\DataTransferObjects
+     */
+    function transfer(DataTransferObjects|string $object)
+    {
+        if (is_string($object)) {
+            return new $object;
+        }
 
+        return $object;
+    }
+}

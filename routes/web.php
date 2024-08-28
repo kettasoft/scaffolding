@@ -1,8 +1,7 @@
 <?php
 
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Route;
-use Modules\Children\Entities\Child;
-use Modules\Children\Jobs\SonQueueJob;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +13,6 @@ use Modules\Children\Jobs\SonQueueJob;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/test', function () {
-    $child = Child::first()->toArray();
-    SonQueueJob::dispatch(array_merge($child, ['iterations' => 1]));
-});
 
 Auth::routes();
 
