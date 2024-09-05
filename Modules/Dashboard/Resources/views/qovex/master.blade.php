@@ -23,6 +23,10 @@
     @vite(['Modules/Dashboard/Resources/assets/js/qovex/qovex.js', 'Modules/Dashboard/Resources/assets/scss/qovex/qovex.scss'])
 
     @stack('css')
+
+    @if (config('recaptcha.api_site_key'))
+        {!! htmlScriptTagJsApi() !!}
+    @endif
 </head>
 
 <body data-layout="detached" data-topbar="colored">

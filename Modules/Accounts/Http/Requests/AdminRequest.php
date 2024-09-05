@@ -45,6 +45,7 @@ class AdminRequest extends FormRequest
             'email' => ['required', 'email', 'unique:users'],
             'phone' => ['required', 'unique:users,phone'],
             'password' => ['required', 'min:8', 'confirmed'],
+            recaptchaFieldName() => recaptchaRuleName(),
             'type' => ['sometimes', 'nullable', Rule::in(array_keys(trans('accounts::users.types')))],
         ];
     }
