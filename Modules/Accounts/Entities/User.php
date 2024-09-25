@@ -13,7 +13,6 @@ use Laracasts\Presenter\PresentableTrait;
 use Lab404\Impersonate\Models\Impersonate;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Laratrust\Traits\HasRolesAndPermissions;
-use Modules\Chats\Entities\Concerns\HasChats;
 use Modules\Accounts\Entities\Helpers\UserHelpers;
 use Cog\Contracts\Ban\Bannable as BannableContract;
 use Modules\Accounts\Transformers\CustomerResource;

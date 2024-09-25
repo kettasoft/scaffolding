@@ -36,6 +36,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+        $this->mapSocialiteRoutes();
     }
 
     /**
@@ -65,5 +67,18 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Accounts', '/Routes/api.php'));
+    }
+
+    /**
+     * Define the "socialite" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapSocialiteRoutes()
+    {
+        Route::middleware('guest')
+            ->group(module_path('Accounts', '/Routes/socialite.php'));
     }
 }

@@ -24,16 +24,6 @@ trait UserHelpers
     }
 
     /**
-     * Determine whether the user type is customer.
-     *
-     * @return bool
-     */
-    public function isParent()
-    {
-        return $this->type === User::PARENT_TYPE;
-    }
-
-    /**
      * Set the user type.
      *
      * @return $this

@@ -4,7 +4,6 @@ namespace Modules\Accounts\Http\Controllers;
 
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Routing\Controller;
-use Modules\Accounts\Entities\Provider;
 use Modules\Accounts\Entities\User;
 use Modules\Accounts\Http\Filters\SelectFilter;
 use Modules\Accounts\Transformers\SelectResource;

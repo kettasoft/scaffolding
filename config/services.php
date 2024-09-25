@@ -36,14 +36,13 @@ return [
     ],
 
     'smsKey' => [
-//        'Key' => env('SMS_API_KEY'),
-//        'site' => env('SMS_SITE'),
-//        'title' => env('SMS_TITLE'),
+        //        'Key' => env('SMS_API_KEY'),
+        //        'site' => env('SMS_SITE'),
+        //        'title' => env('SMS_TITLE'),
     ],
 
     'customerOneSignal' => [
         'app_id' => env('ONESIGNAL_APP_ID_CUSTOMER'),
         'rest_api_key' => env('ONESIGNAL_REST_API_KEY_CUSTOMER')
     ],
-
 ];

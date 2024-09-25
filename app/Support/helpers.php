@@ -320,3 +320,15 @@ if (!function_exists('transfer')) {
         return $object;
     }
 }
+
+if (!function_exists('socialite')) {
+    /**
+     * Get socialite driver route
+     * @param string $driver
+     * @return string
+     */
+    function socialite(string $driver): string
+    {
+        return route("login.socialite", $driver);
+    }
+}

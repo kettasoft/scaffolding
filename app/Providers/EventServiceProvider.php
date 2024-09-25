@@ -2,13 +2,15 @@
 
 namespace App\Providers;
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
+use Modules\Accounts\Events\VerificationCreated;
+use Modules\Accounts\Events\ResetPasswordCreated;
+use Modules\Accounts\Listeners\SendVerificationCode;
+use Modules\Accounts\Listeners\SendResetPasswordCode;
+use Modules\TFA\Listeners\TowFactorAuthenticationListener;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Modules\Accounts\Events\ResetPasswordCreated;
-use Modules\Accounts\Events\VerificationCreated;
-use Modules\Accounts\Listeners\SendResetPasswordCode;
-use Modules\Accounts\Listeners\SendVerificationCode;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,10 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+
+        Login::class => [
+            //
         ],
 
         VerificationCreated::class => [
