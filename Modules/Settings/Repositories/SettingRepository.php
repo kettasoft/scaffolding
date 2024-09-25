@@ -2,7 +2,9 @@
 
 namespace Modules\Settings\Repositories;
 
+use Illuminate\Http\Request;
 use Modules\Contracts\CrudRepository;
+use App\Abstracts\DataTransferObjects;
 use Modules\Settings\Entities\Setting;
 
 class SettingRepository implements CrudRepository
@@ -16,10 +18,10 @@ class SettingRepository implements CrudRepository
     }
 
     /**
-     * @param array $data
+     * @param array|Request|DataTransferObjects $data
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function create(array $data)
+    public function create(array|Request|DataTransferObjects $data)
     {
         foreach ($data as $key => $value) {
             Setting::set($key, $value);
@@ -37,9 +39,9 @@ class SettingRepository implements CrudRepository
 
     /**
      * @param mixed $model
-     * @param array $data
+     * @param array|Request|DataTransferObjects $data
      */
-    public function update($model, array $data)
+    public function update($model, array|Request|DataTransferObjects $data)
     {
         //
     }

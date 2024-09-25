@@ -3,18 +3,21 @@
 namespace Modules\Pages\Repositories;
 
 use Exception;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Database\Eloquent\Model;
-use Modules\Contracts\CrudRepository;
+use Illuminate\Http\Request;
 use Modules\Pages\Entities\Page;
+use Illuminate\Support\Collection;
+use Modules\Contracts\CrudRepository;
+use App\Abstracts\DataTransferObjects;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Pages\Http\Filters\PageFilter;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class PageRepository implements CrudRepository
 {
     private $filter;
 
     /**
-     * ProductRepository constructor.
+     * PageRepository constructor.
      * @param PageFilter $filter
      */
     public function __construct(PageFilter $filter)
@@ -25,16 +28,16 @@ class PageRepository implements CrudRepository
     /**
      * @return LengthAwarePaginator
      */
-    public function all()
+    public function all(): LengthAwarePaginator
     {
         return Page::filter($this->filter)->paginate(request('perPage'));
     }
 
     /**
-     * @param array $data
-     * @return Model
+     * @param array|Request|DataTransferObjects $data
+     * @return Model|Page
      */
-    public function create(array $data)
+    public function create(array|Request|DataTransferObjects $data): Model|Page
     {
         $page = Page::create($data);
 
@@ -42,10 +45,10 @@ class PageRepository implements CrudRepository
     }
 
     /**
-     * @param mixed $model
-     * @return Model|void
+     * @param int|Model $model
+     * @return array|Collection|Model|Page
      */
-    public function find($model)
+    public function find(int|Model $model): array|Collection|Model|Page
     {
         if ($model instanceof Page) {
             return $model;
@@ -55,11 +58,11 @@ class PageRepository implements CrudRepository
     }
 
     /**
-     * @param mixed $model
-     * @param array $data
+     * @param int|Model $model
+     * @param array|Request|DataTransferObjects $data
      * @return Model|Page|void
      */
-    public function update($model, array $data)
+    public function update(int|Model $model, array|Request|DataTransferObjects $data)
     {
         $page = $this->find($model);
 
@@ -69,10 +72,10 @@ class PageRepository implements CrudRepository
     }
 
     /**
-     * @param mixed $model
+     * @param int|Model $model
      * @throws Exception
      */
-    public function delete($model)
+    public function delete(int|Model $model)
     {
         $this->find($model)->delete();
     }

@@ -3,12 +3,15 @@
 namespace Modules\Accounts\Repositories;
 
 use Exception;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Modules\Accounts\Entities\Admin;
+use Modules\Contracts\CrudRepository;
+use App\Abstracts\DataTransferObjects;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
-use Modules\Accounts\Entities\Admin;
 use Modules\Accounts\Http\Filters\AdminFilter;
-use Modules\Contracts\CrudRepository;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class AdminRepository implements CrudRepository
 {
@@ -32,7 +35,7 @@ class AdminRepository implements CrudRepository
      *
      * @return LengthAwarePaginator
      */
-    public function all()
+    public function all(): LengthAwarePaginator
     {
         if (\Module::collections()->has('Roles')) {
             return Admin::where('email', '!=', 'root@demo.com')->filter($this->filter)->paginate(request('perPage'));
@@ -44,10 +47,10 @@ class AdminRepository implements CrudRepository
     /**
      * Save the created model to storage.
      *
-     * @param array $data
-     * @return Admin
+     * @param array|Request|DataTransferObjects $data
+     * @return Admin|Model
      */
-    public function create(array $data)
+    public function create(array|Request|DataTransferObjects $data): Admin|Model
     {
         $admin = Admin::create($data);
 
@@ -66,10 +69,10 @@ class AdminRepository implements CrudRepository
     /**
      * Display the given client instance.
      *
-     * @param mixed $model
+     * @param int|Model $model
      * @return Admin
      */
-    public function find($model)
+    public function find(int|Model $model): Admin|array|Collection|Model
     {
         if ($model instanceof Admin) {
             return $model;
@@ -85,7 +88,7 @@ class AdminRepository implements CrudRepository
      * @param array $data
      * @return Model
      */
-    public function update($model, array $data)
+    public function update(int|Model $model, array|Request|DataTransferObjects $data): Admin|array|Collection|Model
     {
         $admin = $this->find($model);
 
@@ -109,11 +112,11 @@ class AdminRepository implements CrudRepository
     /**
      * Delete the given client from storage.
      *
-     * @param mixed $model
+     * @param int|Model $model
      * @return void
      * @throws Exception
      */
-    public function delete($model)
+    public function delete(int|Model $model): void
     {
         $this->find($model)->delete();
     }
@@ -125,7 +128,7 @@ class AdminRepository implements CrudRepository
      * @param array $data
      * @return Admin
      */
-    private function setType(Admin $admin, array $data)
+    private function setType(Admin $admin, array $data): Admin
     {
         if (isset($data['type'])) {
             $admin->setType($data['type']);
@@ -138,7 +141,7 @@ class AdminRepository implements CrudRepository
      * @param Admin $admin
      * @return Admin
      */
-    public function block(Admin $admin)
+    public function block(Admin $admin): Admin
     {
         $admin->block()->save();
 
@@ -149,7 +152,7 @@ class AdminRepository implements CrudRepository
      * @param Admin $admin
      * @return Admin
      */
-    public function unblock(Admin $admin)
+    public function unblock(Admin $admin): Admin
     {
         $admin->unblock()->save();
 

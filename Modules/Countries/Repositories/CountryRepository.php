@@ -2,9 +2,14 @@
 
 namespace Modules\Countries\Repositories;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Modules\Contracts\CrudRepository;
+use App\Abstracts\DataTransferObjects;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Countries\Entities\Country;
 use Modules\Countries\Http\Filters\CountryFilter;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class CountryRepository implements CrudRepository
 {
@@ -28,7 +33,7 @@ class CountryRepository implements CrudRepository
      *
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function all()
+    public function all(): LengthAwarePaginator
     {
         return Country::filter($this->filter)->paginate(request('perPage'));
     }
@@ -36,10 +41,10 @@ class CountryRepository implements CrudRepository
     /**
      * Save the created model to storage.
      *
-     * @param array $data
+     * @param array|Request|DataTransferObjects $data
      * @return \Modules\Countries\Entities\Country
      */
-    public function create(array $data)
+    public function create(array|Request|DataTransferObjects $data): Country
     {
         /** @var Country $country */
         $country = Country::create($data);
@@ -52,10 +57,10 @@ class CountryRepository implements CrudRepository
     /**
      * Display the given country instance.
      *
-     * @param mixed $model
+     * @param int|Model $model
      * @return \Modules\Countries\Entities\Country
      */
-    public function find($model)
+    public function find(int|Model $model): array|Collection|Country|Model
     {
         if ($model instanceof Country) {
             return $model;
@@ -67,11 +72,11 @@ class CountryRepository implements CrudRepository
     /**
      * Update the given country in the storage.
      *
-     * @param mixed $model
-     * @param array $data
+     * @param int|Model $model
+     * @param array|Request|DataTransferObjects $data
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function update($model, array $data)
+    public function update(int|Model $model, array|Request|DataTransferObjects $data): array|Collection|Country|Model
     {
         $country = $this->find($model);
 
@@ -85,11 +90,11 @@ class CountryRepository implements CrudRepository
     /**
      * Delete the given country from storage.
      *
-     * @param mixed $model
+     * @param int|Model $model
      * @return void
      * @throws \Exception
      */
-    public function delete($model)
+    public function delete(int|Model $model)
     {
         $this->find($model)->delete();
     }

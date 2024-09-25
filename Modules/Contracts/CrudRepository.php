@@ -2,6 +2,10 @@
 
 namespace Modules\Contracts;
 
+use Illuminate\Http\Request;
+use App\Abstracts\DataTransferObjects;
+use Illuminate\Database\Eloquent\Model;
+
 interface CrudRepository
 {
     /**
@@ -14,33 +18,33 @@ interface CrudRepository
     /**
      * Save the created model to storage.
      *
-     * @param array $data
+     * @param array|Request|DataTransferObjects $data
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function create(array $data);
+    public function create(array|Request|DataTransferObjects $data);
 
     /**
      * Display the given model instance.
      *
-     * @param mixed $model
+     * @param int|Model $model
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function find($model);
+    public function find(int|Model $model);
 
     /**
      * Update the given model in the storage.
      *
-     * @param mixed $model
-     * @param array $data
+     * @param int|Model $model
+     * @param array|Request|DataTransferObjects $data
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function update($model, array $data);
+    public function update(int|Model $model, array|Request|DataTransferObjects $data);
 
     /**
      * Delete the given model from storage.
      *
-     * @param mixed $model
+     * @param int|Model $model
      * @return void
      */
-    public function delete($model);
+    public function delete(int|Model $model);
 }
