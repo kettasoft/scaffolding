@@ -14,7 +14,7 @@ class WhatsappService
      * @param string $language
      * @return void
      */
-    public function send(string $phone, string $content, array $parameters = [], string $language = 'en'): string
+    public static function send(string $phone, string $content, array $parameters = [], string $language = 'en'): string
     {
         $token = config('services.whatsapp.token');
         $channelId = config('services.whatsapp.channelId');
