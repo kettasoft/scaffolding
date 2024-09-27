@@ -1,52 +1,42 @@
 <?php
 
-namespace App\Integrations\Payments;
+namespace App\Integrations\Payments\Gateways;
 
+use App\Integrations\Payments\PaymentGateway;
 use Throwable;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Modules\Support\Traits\ApiTrait;
-use Modules\Support\Traits\ConsumeExternalServices;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class MyFatoorah
+class MyFatoorah extends PaymentGateway
 {
-    use ConsumeExternalServices, ApiTrait;
+    use ApiTrait;
 
-    protected string $url;
+    protected string $baseUri;
     protected string $app_key;
 
-    public function __construct()
-    {
-        $this->url = config('payments.myfatoorah.uri');
-        $this->app_key = config('payments.myfatoorah.app_key');
-    }
+    protected string $callback;
 
-    // to resolve the autorization
-    public function resolveAuthorization(&$queryParams, &$formParams, &$headers)
+    protected string $error_url;
+
+    public function __construct(?string $callback = null, ?string $error_url = null)
     {
-        $headers['Authorization'] = $this->resolveAccessToken();
+        $this->baseUri = config('payments.myfatoorah.uri');
+        $this->app_key = config('payments.myfatoorah.app_key');
+        $this->app_key = config('payments.myfatoorah.app_key');
+        $this->callback = $callback ?? config('payments.myfatoorah.callback');
+        $this->error_url = $error_url ?? config('payments.myfatoorah.error_url');
     }
 
     // create the access token
-    public function resolveAccessToken()
+    public function resolveAccessToken(): string
     {
         return "Bearer {$this->app_key}";
     }
 
-    // resolve the factor (to solve zero decimal currency problem)
-    public function resolveFactor($currency)
-    {
-        $zeroDecimalCurrencies = ['JPY'];
-
-        if (in_array(strtoupper($currency), $zeroDecimalCurrencies)) {
-            return 1;
-        }
-        return 100;
-    }
-
     // to decode the response of the sent request
-    public function decodeResponse($response)
+    public function decodeResponse($response): mixed
     {
         return json_decode($response);
     }
@@ -65,8 +55,8 @@ class MyFatoorah
                     "CustomerEmail" => $email,
                     "InvoiceValue" => round($value * $factor = $this->resolveFactor($currency)) / $factor,
                     "DisplayCurrencyIso" => strtoupper($currency),
-                    "CallBackUrl" => route('approval'),
-                    "ErrorUrl" => route('cancelled'),
+                    "CallBackUrl" => $this->callback,
+                    "ErrorUrl" => $this->error_url,
                     "Language" => "en",
                 ],
                 [],
@@ -76,7 +66,7 @@ class MyFatoorah
 
             if ($th->getResponse()) {
                 $decodeResponse = json_decode($th->getResponse()->getBody()->getContents(), true);
-                $ResponseErrors = data_get($decodeResponse , 'ValidationErrors', [['Error' => 'payment has error']] );
+                $ResponseErrors = data_get($decodeResponse, 'ValidationErrors', [['Error' => 'payment has error']]);
                 $errors = collect($ResponseErrors)->pluck('Error')->toArray();
 
                 throw new HttpResponseException($this->sendErrorData(['error' => $errors], data_get($errors, 0, 'payment has error')));
