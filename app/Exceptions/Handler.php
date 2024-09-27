@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Integrations\Slack\SlackErrorReporter;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -37,5 +38,23 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    /**
+     * Report or log an exception.
+     *
+     * @param  \Throwable  $e
+     * @return void
+     *
+     * @throws \Throwable
+     */
+    public function report(Throwable $exception): void
+    {
+        // Call the parent report method
+        parent::report($exception);
+
+        $slackErrorReporterInstanse = new SlackErrorReporter($exception);
+
+        $slackErrorReporterInstanse->send();
     }
 }
