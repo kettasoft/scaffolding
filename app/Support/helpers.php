@@ -1,8 +1,11 @@
 <?php
 
-use App\Abstracts\DataTransferObjects;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Route;
+use App\Abstracts\DataTransferObjects;
 use Illuminate\Support\Facades\Config;
+use Laraeast\LaravelSettings\Facades\Settings;
 
 if (!function_exists('validate_base64')) {
     /**
@@ -212,6 +215,8 @@ if (!function_exists('isActive')) {
         if (strpos(URL::current(), $route)) {
             return $className;
         }
+
+        return '';
     }
 }
 
