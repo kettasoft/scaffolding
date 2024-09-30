@@ -24,14 +24,12 @@ class SlackErrorReporter
      */
     public function send()
     {
-        if (is_null($this->webhook) && env('SLACK_WEBHOOK_ENABLE')) {
-            return;
-        }
-
-        try {
-            Http::post($this->webhook, $this->segnature($this->exception));
-        } catch (\Exception $e) {
-            Log::error('Failed to send Slack notification: ' . $e->getMessage());
+        if (! is_null($this->webhook) && env('SLACK_WEBHOOK_ENABLE')) {
+            try {
+                Http::post($this->webhook, $this->segnature($this->exception));
+            } catch (\Exception $e) {
+                Log::error('Failed to send Slack notification: ' . $e->getMessage());
+            }
         }
     }
 
