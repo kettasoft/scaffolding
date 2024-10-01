@@ -74,6 +74,7 @@ php artisan sample-data:seed --count="your count here"
   <!-- Repo info cards - https://github.com/anuraghazra/github-readme-stats -->
   <!-- Small repo cards (fork) - https://github.com/DenverCoder1/github-readme-stats -->
   <p align="left">
+    <a href="https://github.com/kettasoft/booter"><img width="278" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=kettasoft&repo=booter&theme=react&bg_color=282a36&title_color=bd93f9&hide_border=true&icon_color=F8D866&show_icons=false" alt="github-readme-streak-stats"></a>
     <a href="https://github.com/andreaselia/laravel-api-to-postman"><img width="278" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=andreaselia&repo=laravel-api-to-postman&theme=react&bg_color=282a36&title_color=bd93f9&hide_border=true&icon_color=F8D866&show_icons=false" alt="github-readme-streak-stats"></a>
 <a href="https://github.com/astrotomic/laravel-translatable"><img width="278" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=astrotomic&repo=laravel-translatable&theme=react&bg_color=282a36&title_color=bd93f9&hide_border=true&icon_color=F8D866&show_icons=false" alt="github-readme-streak-stats"></a>
 <a href="https://github.com/biscolab/laravel-recaptcha"><img width="278" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=biscolab&repo=laravel-recaptcha&theme=react&bg_color=282a36&title_color=bd93f9&hide_border=true&icon_color=F8D866&show_icons=false" alt="github-readme-streak-stats"></a>
@@ -95,4 +96,3 @@ php artisan sample-data:seed --count="your count here"
     <a href="https://github.com/404labfr/laravel-impersonate"><img width="278" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=404labfr&repo=laravel-impersonate&theme=react&bg_color=282a36&title_color=bd93f9&hide_border=true&icon_color=F8D866&show_icons=false" alt="unicode-formatter"></a>
     <a href="https://github.com/laracasts/flash"><img width="278" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=laracasts&repo=flash&theme=react&bg_color=282a36&title_color=bd93f9&hide_border=true&icon_color=F8D866&show_icons=false" alt="unicode-formatter"></a>
 </details>
-
