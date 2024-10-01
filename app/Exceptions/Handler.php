@@ -52,9 +52,5 @@ class Handler extends ExceptionHandler
     {
         // Call the parent report method
         parent::report($exception);
-
-        $slackErrorReporterInstanse = new SlackErrorReporter($exception);
-
-        $slackErrorReporterInstanse->send();
     }
 }

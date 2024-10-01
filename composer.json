@@ -20,6 +20,7 @@
         "doctrine/dbal": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
         "jenssegers/date": "^4.0",
+        "kettasoft/booter": "^1.0",
         "lab404/laravel-impersonate": "^1.7",
         "laracasts/flash": "^3.2",
         "laracasts/presenter": "^0.2.4",

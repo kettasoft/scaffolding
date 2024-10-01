@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af1876053e12f29fdb9dad706654ea8b",
+    "content-hash": "d39278d4082773c707d983cc3c7b96d7",
     "packages": [
         {
             "name": "ahmed-aliraqi/laravel-media-uploader",
@@ -2423,6 +2423,46 @@
                 }
             ],
             "time": "2020-04-28T06:35:54+00:00"
+        },
+        {
+            "name": "kettasoft/booter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kettasoft/booter.git",
+                "reference": "ae8b532ab30789b26fbb2c468b39598afd53af92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kettasoft/booter/zipball/ae8b532ab30789b26fbb2c468b39598afd53af92",
+                "reference": "ae8b532ab30789b26fbb2c468b39598afd53af92",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Scaffolding\\Booter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdalrhman Emad Saad",
+                    "email": "kettasoft@gmail.com"
+                }
+            ],
+            "description": "The Laravel Model Event Booter package provides a flexible way to organize and manage model event handling in Laravel applications. It allows developers to define specific actions for model events (such as created, updated, deleted, etc.) by associating them with custom classes. The package simplifies the process of executing logic for model events and makes it easy to extend and maintain event-driven behavior.",
+            "support": {
+                "issues": "https://github.com/kettasoft/booter/issues",
+                "source": "https://github.com/kettasoft/booter/tree/v1.0.0"
+            },
+            "time": "2024-10-01T01:24:51+00:00"
         },
         {
             "name": "kkszymanowski/traitor",
@@ -13506,5 +13546,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }

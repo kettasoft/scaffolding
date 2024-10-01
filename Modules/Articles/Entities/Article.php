@@ -2,15 +2,18 @@
 
 namespace Modules\Articles\Entities;
 
-use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
 use App\Http\Filters\Filterable;
-use Astrotomic\Translatable\Translatable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Modules\Articles\Entities\Helpers\ArticleHelpers;
-use Modules\Support\Traits\Selectable;
 use Spatie\MediaLibrary\HasMedia;
+use App\Contracts\HasBooterContract;
+use Modules\Support\Traits\Selectable;
+use Illuminate\Database\Eloquent\Model;
+use Scaffolding\Booter\Traits\HasBooter;
+use Astrotomic\Translatable\Translatable;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Modules\Articles\Boots\AttachAutherIdBoot;
+use Modules\Articles\Entities\Helpers\ArticleHelpers;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
 
 class Article extends Model implements HasMedia
 {
@@ -20,12 +23,22 @@ class Article extends Model implements HasMedia
         InteractsWithMedia,
         HasUploader,
         ArticleHelpers,
-        HasFactory;
+        HasFactory,
+        HasBooter;
 
     /**
      * @var array
      */
     public $translatedAttributes = ['name', 'content'];
+
+    /**
+     * @var array
+     */
+    protected static $events = [
+        'created' => [
+            AttachAutherIdBoot::class
+        ]
+    ];
 
     /**
      * @var array
