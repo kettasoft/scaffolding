@@ -1,10 +1,14 @@
 {
-    "name": "laravel/laravel",
+    "name": "kettasoft/scaffolding",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Scaffolding is a strong and flexible structure based on HMVC architecture.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "scaffolding",
+        "hmvc",
+        "components",
+        "architecture"
     ],
     "license": "MIT",
     "require": {

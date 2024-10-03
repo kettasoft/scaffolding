@@ -34,11 +34,11 @@ return [
             'views/index' => 'Resources/views/index.blade.php',
             'views/master' => 'Resources/views/layouts/master.blade.php',
             'scaffold/config' => 'Config/config.php',
-            'composer' => 'composer.json',
+            // 'composer' => 'composer.json',
             'assets/js/app' => 'Resources/assets/js/app.js',
             'assets/sass/app' => 'Resources/assets/sass/app.scss',
             //            'webpack' => 'webpack.mix.js',
-            'package' => 'package.json',
+            // 'package' => 'package.json',
         ],
         'replacements' => [
             'routes/web' => [
@@ -144,8 +144,12 @@ return [
                 'path' => 'Http/Controllers',
                 'generate' => true
             ],
-            'filter' => [
+            'middleware' => [
                 'path' => 'Http/Middleware',
+                'generate' => true
+            ],
+            'filter' => [
+                'path' => 'Http/Filters',
                 'generate' => true
             ],
             'request' => [
@@ -158,7 +162,7 @@ return [
             ],
             'assets' => [
                 'path' => 'Resources/assets',
-                'generate' => true
+                'generate' => false
             ],
             'lang' => [
                 'path' => 'Resources/lang',
@@ -214,7 +218,10 @@ return [
             ],
             'resource' => [
                 'path' => 'Transformers',
-                'generate' => false
+                'generate' => true
+            ],
+            'relations' => [
+                'path' => 'Entities/Relations'
             ],
             'component-view' => [
                 'path' => 'Resources/views/components',

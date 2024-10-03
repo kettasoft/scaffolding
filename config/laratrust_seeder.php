@@ -22,6 +22,7 @@ return [
             'pages'     => 'c,r,u,d,s',
             'countries' => 'c,r,u,d,s',
             'cities'    => 'c,r,u,d,s',
+            'posts'     => 'c,r,u,d,s'
         ],
         'admin'       => [
             'roles'     => 'c,r,u,d,s',
